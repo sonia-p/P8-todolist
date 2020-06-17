@@ -57,13 +57,14 @@ describe('controller', function () {
 		view = createViewStub();
 		subject = new app.Controller(model, view);
 	});
-
+	////devrait montrer les entrées au démarrage
 	it('should show entries on start-up', function () {
 		// TODO: write test
+		
 	});
 
 	describe('routing', function () {
-
+		
 		it('should show all entries without a route', function () {
 			var todo = {title: 'my todo'};
 			setUpModel([todo]);
@@ -81,11 +82,11 @@ describe('controller', function () {
 
 			expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
 		});
-
+		//devrait montrer les entrées actives
 		it('should show active entries', function () {
 			// TODO: write test
 		});
-
+		//devrait montrer les entrées complétées
 		it('should show completed entries', function () {
 			// TODO: write test
 		});
@@ -132,25 +133,25 @@ describe('controller', function () {
 			visible: true
 		});
 	});
-
+	//devrait mettre en évidence le filtre "Tous" par défaut
 	it('should highlight "All" filter by default', function () {
 		// TODO: write test
 	});
-
+	//devrait mettre en évidence le filtre "Actif" lors du passage à la vue active
 	it('should highlight "Active" filter when switching to active view', function () {
 		// TODO: write test
 	});
-
+	//devrait basculer tous les todos vers terminés
 	describe('toggle all', function () {
 		it('should toggle all todos to completed', function () {
 			// TODO: write test
 		});
-
+		//devrait mettre à jour la vue
 		it('should update the view', function () {
 			// TODO: write test
 		});
 	});
-
+	//devrait ajouter une nouvelle tâche au modèle
 	describe('new todo', function () {
 		it('should add a new todo to the model', function () {
 			// TODO: write test
@@ -195,7 +196,7 @@ describe('controller', function () {
 		it('should remove an entry from the model', function () {
 			// TODO: write test
 		});
-
+		//devrait supprimer une entrée du modèle
 		it('should remove an entry from the view', function () {
 			var todo = {id: 42, title: 'my todo', completed: true};
 			setUpModel([todo]);
