@@ -60,7 +60,12 @@ describe('controller', function () {
 	////devrait montrer les entrées au démarrage
 	it('should show entries on start-up', function () {
 		// TODO: write test
-		
+		var todo = {};
+			setUpModel([todo]);
+
+			subject.setView('');
+
+			expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
 	});
 
 	describe('routing', function () {
