@@ -3,7 +3,7 @@
 
 	/**
 	 * Takes a model and view and acts as the controller between them
-	 * Prend un modèle et une vue et actions comme le contrôleur entre eux
+	 * 
 	 * @constructor
 	 * @param {object} model The model instance
 	 * @param {object} view The view instance
@@ -48,7 +48,7 @@
 
 	/**
 	 * Loads and initialises the view
-	 * Charge et initialise la vue
+	 * 
 	 * @param {string} '' | 'active' | 'completed'
 	 */
 	Controller.prototype.setView = function (locationHash) {
@@ -59,7 +59,7 @@
 
 	/**
 	 * An event to fire on load. Will get all items and display them in the
-	 * todo-list Un événement à tirer à pleine charge. Obtiendra tous les éléments et les affichera dans la todo list
+	 * todo-list  
 	 */
 	Controller.prototype.showAll = function () {
 		var self = this;
@@ -69,7 +69,7 @@
 	};
 
 	/**
-	 * Renders all active tasks  Rend toutes les tâches actives
+	 * Renders all active tasks  
 	 */
 	Controller.prototype.showActive = function () {
 		var self = this;
@@ -79,7 +79,7 @@
 	};
 
 	/**
-	 * Renders all completed tasks Rend toutes les tâches terminées
+	 * Renders all completed tasks 
 	 */
 	Controller.prototype.showCompleted = function () {
 		var self = this;
@@ -90,7 +90,7 @@
 
 	/**
 	 * An event to fire whenever you want to add an item. Simply pass in the event object and it'll handle the DOM insertion and saving of the new item.
-	 * Un événement à déclencher chaque fois que vous souhaitez ajouter un élément. Passez simplement l'événement objet et il gérera l'insertion DOM et l'enregistrement du nouvel élément.
+	 * 
 	 */
 	Controller.prototype.addItem = function (title) {
 		var self = this;
@@ -106,7 +106,7 @@
 	};
 
 	/*
-	 * Triggers the item editing mode. Déclenche le mode d'édition des éléments.
+	 * Triggers the item editing mode. 
 	 */
 	Controller.prototype.editItem = function (id) {
 		var self = this;
@@ -116,7 +116,7 @@
 	};
 
 	/*
-	 * Finishes the item editing mode successfully. Termine le mode d'édition d'élément avec succès.
+	 * Finishes the item editing mode successfully. 
 	 */
 	Controller.prototype.editItemSave = function (id, title) {
 		var self = this;
@@ -139,7 +139,7 @@
 	};
 
 	/*
-	 * Cancels the item editing mode. Annule le mode d'édition des éléments.
+	 * Cancels the item editing mode. 
 	 */
 	Controller.prototype.editItemCancel = function (id) {
 		var self = this;
@@ -150,8 +150,8 @@
 
 	/**
 	 * By giving it an ID it'll find the DOM element matching that ID,
-	 * remove it from the DOM and also remove it from storage.supprimez-le du DOM et supprimez-le également du stockage.
-	 * En lui donnant un ID, il trouvera l'élément DOM correspondant à cet ID,
+	 * remove it from the DOM and also remove it from storage.
+	 * 
 	 * @param {number} id The ID of the item to remove from the DOM and
 	 * storage
 	 */
@@ -162,12 +162,6 @@
 			items = data;
 		});
 
-/* 		items.forEach(function(item) {
-			if (item.id === id) {
-				console.log("Element with ID: " + id + " has been removed.");
-			}
-		}); */
-
 		self.model.remove(id, function () {
 			self.view.render('removeItem', id);
 		});
@@ -176,7 +170,7 @@
 	};
 
 	/**
-	 * Will remove all completed items from the DOM and storage. Supprime tous les éléments terminés du DOM et du stockage.
+	 * Will remove all completed items from the DOM and storage. 
 	 */
 	Controller.prototype.removeCompletedItems = function () {
 		var self = this;
@@ -192,7 +186,7 @@
 	/**
 	 * Give it an ID of a model and a checkbox and it will update the item
 	 * in storage based on the checkbox's state.
-	 * Donnez-lui l'ID d'un modèle et une case à cocher et il mettra à jour l'élément en stockage en fonction de l'état de la case à cocher.
+	 * 
 	 * @param {number} id The ID of the element to complete or uncomplete
 	 * @param {object} checkbox The checkbox to check the state of complete
 	 *                          or not

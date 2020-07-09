@@ -4,7 +4,7 @@
 
 	/**
 	 * Sets up a brand new Todo list.
-	 * Configure une toute nouvelle liste Todo.
+	 * 
 	 * @param {string} name The name of your new to do list.
 	 */
 	function Todo(name) {
@@ -18,7 +18,7 @@
 	var todo = new Todo('todos-vanillajs');
 	
 	function setView() {
-		todo.controller.setView(document.location.hash);// hash partie de l'Url qui suit le symbole #
+		todo.controller.setView(document.location.hash);
 	}
 	$on(window, 'load', setView);
 	$on(window, 'hashchange', setView);

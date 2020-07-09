@@ -22,7 +22,7 @@
 		callback = callback || function () {};
 
 		var newItem = {
-			title: title.trim(), //permet de retirer les blancs en début et fin de chaîne
+			title: title.trim(), 
 			completed: false
 		};
 
